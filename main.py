@@ -11,7 +11,7 @@ at the time. The charger will confirm it."
 Deterministic: the same line is written on every run. Offline: no
 network access, no input files, standard library only.
 
-Verified 2026-11-24T03:25Z: two runs from clean copies produce
+Verified 2026-11-24T03:22Z: two runs from clean copies produce
 byte-identical output, sha256
 c0b40d1c867f6745dfd47af9abb952a1629c3f18fe4c19606301585ff3b7c48e,
 mode 0644, 112 bytes, 112 code points, one line, no trailing newline.
