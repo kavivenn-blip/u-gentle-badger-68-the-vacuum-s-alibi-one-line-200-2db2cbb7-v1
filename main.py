@@ -4,24 +4,33 @@
 Writes a single line, in which a robot vacuum explains why it missed
 a spot, to /output/entry.txt.
 
-The line (112 characters, one line, UTF-8, no trailing newline):
-"I left it there as evidence, Exhibit A. If anyone asks, I was charging
-at the time. The charger will confirm it."
+The line (105 characters, one line, UTF-8, no trailing newline):
+"The spot bribed me with a lost earring. We do not speak of this.
+The earring and I have an understanding."
 
 Deterministic: the same line is written on every run. Offline: no
 network access, no input files, standard library only.
 
-Verified 2026-11-24T03:22Z: two runs from clean copies produce
+Putaran 1 (2026-11-24T03:4xZ): baris diganti dari D3x ("I left it there
+as evidence, Exhibit A...") ke F6 sesudah turnamen ulang dengan kriteria
+tersegel RULES.txt (crosscheck V1 B1): F6 menang 4-0, diputuskan kriteria
+#2 tawa sungguhan (5/5 vs 4/5).
+
+Verified 2026-11-24T03:52Z: two runs from clean copies produce
 byte-identical output, sha256
-c0b40d1c867f6745dfd47af9abb952a1629c3f18fe4c19606301585ff3b7c48e,
-mode 0644, 112 bytes, 112 code points, one line, no trailing newline.
+01faf7aec241752711f42153aa58325ec452e006096fc5f9dcd0117c132db44d,
+mode 0644, 105 bytes, 105 code points, one line, no trailing newline.
+Run dengan jaringan dimatikan (unshare -rn) menghasilkan sha256 yang sama.
+Catatan: bila /output belum ada, os.makedirs membuatnya 0770 di bawah
+umask 007 sandbox ini; di sandbox gerbang, /output sudah ada (0755) dan
+program tidak mengubah modenya — perilaku sama seperti V1.
 """
 
 import os
 
 LINE = (
-    "I left it there as evidence, Exhibit A. If anyone asks, "
-    "I was charging at the time. The charger will confirm it."
+    "The spot bribed me with a lost earring. We do not speak of "
+    "this. The earring and I have an understanding."
 )
 
 OUTPUT_PATH = "/output/entry.txt"
